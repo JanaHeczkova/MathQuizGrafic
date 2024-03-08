@@ -10,7 +10,6 @@ namespace MathQuizGrafic
     {
         public int a;
         public int b;
-        private int c;
 
         public int vysledekScitani;
         public int vysledekOdcitani;
@@ -47,7 +46,7 @@ namespace MathQuizGrafic
             a = generatorNahodnychCisel.Next(1, 50); //vygeneruje se číslo a
             while(true)
             {
-            b = generatorNahodnychCisel.Next(1, a);
+            b = generatorNahodnychCisel.Next(1, a); //vygeneruje číslo b tak, aby dělení bylo beze zbytku.
                 if ( a % b == 0)
                 {
                     break;
