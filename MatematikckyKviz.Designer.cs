@@ -38,10 +38,6 @@
             numericUpDownNasobeni = new NumericUpDown();
             numericUpDownDeleni = new NumericUpDown();
             buttonVyhodnoceni = new Button();
-            numericUpDownScitaniPomocny = new NumericUpDown();
-            numericUpDownOdcitaniPomocny = new NumericUpDown();
-            numericUpDownNasobeniPomocny = new NumericUpDown();
-            numericUpDownDeleniPomocny = new NumericUpDown();
             timer1 = new System.Windows.Forms.Timer(components);
             OdpocitavacCasu = new Label();
             labelZbyvaCasu = new Label();
@@ -49,10 +45,6 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDownOdcitani).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownNasobeni).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownDeleni).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownScitaniPomocny).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownOdcitaniPomocny).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownNasobeniPomocny).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownDeleniPomocny).BeginInit();
             SuspendLayout();
             // 
             // labelScitani
@@ -130,38 +122,6 @@
             buttonVyhodnoceni.UseVisualStyleBackColor = true;
             buttonVyhodnoceni.Click += buttonVyhodnoceni_Click;
             // 
-            // numericUpDownScitaniPomocny
-            // 
-            numericUpDownScitaniPomocny.Location = new Point(474, 84);
-            numericUpDownScitaniPomocny.Name = "numericUpDownScitaniPomocny";
-            numericUpDownScitaniPomocny.Size = new Size(64, 27);
-            numericUpDownScitaniPomocny.TabIndex = 14;
-            numericUpDownScitaniPomocny.Visible = false;
-            // 
-            // numericUpDownOdcitaniPomocny
-            // 
-            numericUpDownOdcitaniPomocny.Location = new Point(473, 113);
-            numericUpDownOdcitaniPomocny.Name = "numericUpDownOdcitaniPomocny";
-            numericUpDownOdcitaniPomocny.Size = new Size(65, 27);
-            numericUpDownOdcitaniPomocny.TabIndex = 15;
-            numericUpDownOdcitaniPomocny.Visible = false;
-            // 
-            // numericUpDownNasobeniPomocny
-            // 
-            numericUpDownNasobeniPomocny.Location = new Point(473, 143);
-            numericUpDownNasobeniPomocny.Name = "numericUpDownNasobeniPomocny";
-            numericUpDownNasobeniPomocny.Size = new Size(65, 27);
-            numericUpDownNasobeniPomocny.TabIndex = 16;
-            numericUpDownNasobeniPomocny.Visible = false;
-            // 
-            // numericUpDownDeleniPomocny
-            // 
-            numericUpDownDeleniPomocny.Location = new Point(473, 176);
-            numericUpDownDeleniPomocny.Name = "numericUpDownDeleniPomocny";
-            numericUpDownDeleniPomocny.Size = new Size(65, 27);
-            numericUpDownDeleniPomocny.TabIndex = 17;
-            numericUpDownDeleniPomocny.Visible = false;
-            // 
             // timer1
             // 
             timer1.Enabled = true;
@@ -185,17 +145,13 @@
             labelZbyvaCasu.TabIndex = 19;
             labelZbyvaCasu.Text = "Zbývá času: ";
             // 
-            // Form1
+            // MatematikckyKviz
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(labelZbyvaCasu);
             Controls.Add(OdpocitavacCasu);
-            Controls.Add(numericUpDownDeleniPomocny);
-            Controls.Add(numericUpDownNasobeniPomocny);
-            Controls.Add(numericUpDownOdcitaniPomocny);
-            Controls.Add(numericUpDownScitaniPomocny);
             Controls.Add(buttonVyhodnoceni);
             Controls.Add(numericUpDownDeleni);
             Controls.Add(numericUpDownNasobeni);
@@ -205,16 +161,12 @@
             Controls.Add(labelOdcitani);
             Controls.Add(numericUpDownScitani);
             Controls.Add(labelScitani);
-            Name = "Form1";
+            Name = "MatematikckyKviz";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)numericUpDownScitani).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownOdcitani).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownNasobeni).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownDeleni).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownScitaniPomocny).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownOdcitaniPomocny).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownNasobeniPomocny).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownDeleniPomocny).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -230,10 +182,6 @@
         private NumericUpDown numericUpDownNasobeni;
         private NumericUpDown numericUpDownDeleni;
         private Button buttonVyhodnoceni;
-        private NumericUpDown numericUpDownScitaniPomocny;
-        private NumericUpDown numericUpDownOdcitaniPomocny;
-        private NumericUpDown numericUpDownNasobeniPomocny;
-        private NumericUpDown numericUpDownDeleniPomocny;
         private System.Windows.Forms.Timer timer1;
         private Label OdpocitavacCasu;
         private Label labelZbyvaCasu;

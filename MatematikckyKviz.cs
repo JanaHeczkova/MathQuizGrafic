@@ -1,33 +1,37 @@
+using System.Runtime.InteropServices;
+using System.Security;
+using System.Security.Cryptography.X509Certificates;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace MathQuizGrafic
 {
     public partial class MatematikckyKviz : Form
     {
+        MatematickyPriklad scitani;
+        MatematickyPriklad odcitani;
+        MatematickyPriklad nasobeni;
+        MatematickyPriklad deleni;
+
         public MatematikckyKviz()
         {
             InitializeComponent();
             RundomNumbers rundomNumbers = new RundomNumbers();
-            rundomNumbers.VygenerujCislaProScitani();
+            scitani = rundomNumbers.VygenerujCislaProScitani();
             labelScitani.Text = rundomNumbers.a + " + " + rundomNumbers.b + " = ";
-            rundomNumbers.VygenerujCislaOdecitani();
+            odcitani = rundomNumbers.VygenerujCislaOdecitani();
             labelOdcitani.Text = rundomNumbers.a + " - " + rundomNumbers.b + " = ";
-            rundomNumbers.VygenerujCislaNasobeni();
+            nasobeni = rundomNumbers.VygenerujCislaNasobeni();
             labelNasobeni.Text = rundomNumbers.a + " * " + rundomNumbers.b + " = ";
-            rundomNumbers.VygenerujCislaDeleni();
+            deleni = rundomNumbers.VygenerujCislaDeleni();
             labelDeleni.Text = rundomNumbers.a + " / " + rundomNumbers.b + " = ";
-            numericUpDownScitaniPomocny.Value = rundomNumbers.vysledekScitani;
-            numericUpDownOdcitaniPomocny.Value = rundomNumbers.vysledekOdcitani;
-            numericUpDownNasobeniPomocny.Value = rundomNumbers.vysledekNasobeni;
-            numericUpDownDeleniPomocny.Value = rundomNumbers.vysledekDeleni;
+
 
         }
-        RundomNumbers rundomNumbers = new RundomNumbers();
         public int pocetSpravnychVysledku = 0; //Pomocná promìnná pro napoèítávání poètu správných odpovìdí
 
         public void PorovnaniVysledkuScitani()
         {
-            if (numericUpDownScitani.Value == numericUpDownScitaniPomocny.Value)  
+            if (numericUpDownScitani.Value == scitani.Vysledek)
             {
                 numericUpDownScitani.ForeColor = Color.Blue;      //Pokud se zadaná hodnota rovná výsledku operace, tak se zadaná hodnota oznaèí modøe
                 pocetSpravnychVysledku++;                         //Poèet správných odpovìdí se navýší o 1
@@ -40,7 +44,7 @@ namespace MathQuizGrafic
 
         public void PorovnaniVysledkuOdcitani()
         {
-            if (numericUpDownOdcitani.Value == numericUpDownOdcitaniPomocny.Value)    
+            if (numericUpDownOdcitani.Value == odcitani.Vysledek)
             {
                 numericUpDownOdcitani.ForeColor = Color.Blue;   //Pokud se zadaná hodnota rovná výsledku operace, tak se zadaná hodnota oznaèí modøe.
                 pocetSpravnychVysledku++;                       //Poèet správných odpovìdí se navýší o 1.
@@ -53,7 +57,7 @@ namespace MathQuizGrafic
 
         public void PorovnaniVysledkuNasobeni()
         {
-            if (numericUpDownNasobeni.Value == numericUpDownNasobeniPomocny.Value)   
+            if (numericUpDownNasobeni.Value == nasobeni.Vysledek)
             {
                 numericUpDownNasobeni.ForeColor = Color.Blue; //Pokud se zadaná hodnota rovná výsledku operace, tak se zadaná hodnota oznaèí modøe.
                 pocetSpravnychVysledku++;                     //Poèet správných odpovìdí se navýší o 1.
@@ -65,7 +69,7 @@ namespace MathQuizGrafic
         }
         public void PorovnaniVysledkuDeleni()
         {
-            if (numericUpDownDeleni.Value == numericUpDownDeleniPomocny.Value)    
+            if (numericUpDownDeleni.Value == deleni.Vysledek)
             {
                 numericUpDownDeleni.ForeColor = Color.Blue; //Pokud se zadaná hodnota rovná výsledku operace, tak se zadaná hodnota oznaèí modøe.
                 pocetSpravnychVysledku++;                   //Poèet správných odpovìdí se navýší o 1.
@@ -82,6 +86,7 @@ namespace MathQuizGrafic
             PorovnaniVysledkuOdcitani();
             PorovnaniVysledkuNasobeni();
             PorovnaniVysledkuDeleni();
+            timer1.Stop();
             MessageBox.Show("Poèet správných odpovìdí: " + pocetSpravnychVysledku);
             Application.Exit();
         }
@@ -96,7 +101,6 @@ namespace MathQuizGrafic
                 MessageBox.Show("Došel ti èas.");
                 Application.Exit();
             }
-
         }
     }
 }
